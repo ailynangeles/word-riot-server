@@ -1,11 +1,16 @@
 const express = require('express');
 const { Server: IOServer } = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
 
 const io = new IOServer(server, {
+  cors: {
+    origin: 'http://localhost:3000', // Your Next.js app's origin
+    methods: ['GET', 'POST'],
+  },
   path: "/socket",  // Set the path explicitly
   // transports: ['polling', 'websocket'],
 });
