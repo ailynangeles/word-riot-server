@@ -10,7 +10,7 @@ const io = new IOServer(server, {
   cors: {
     // replace the URL w/ the deployed Word Riot app
     // or use envi variable and make the URL dynamic
-    origin: process.env.NEXT_PUBLIC_APP_URL, // Your Next.js app's origin
+    origin: '*', // Your Next.js app's origin
     methods: ['GET', 'POST'],
   },
   path: "/socket",  // Set the path explicitly
